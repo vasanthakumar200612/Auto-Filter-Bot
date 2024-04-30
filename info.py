@@ -18,7 +18,7 @@ def is_valid_ip(ip):
 
 # Bot information
 API_ID = environ.get('13050924')
-if len(API_ID) == 0:
+if API_ID == 0:
     print('Error - API_ID is missing, exiting now')
     exit()
 else:
