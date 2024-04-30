@@ -22,7 +22,7 @@ if API_ID == 0:
     print('Error - API_ID is missing, exiting now')
     exit()
 else:
-    API_ID = int(API_ID)
+    API_ID = API_ID
 API_HASH = environ.get('fe442e491c1841a12daeb6754d133739')
 if len(API_HASH) == 0:
     print('Error - API_HASH is missing, exiting now')
