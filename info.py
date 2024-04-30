@@ -24,44 +24,44 @@ if API_ID == 0:
 else:
     API_ID = API_ID
 API_HASH = environ.get('fe442e491c1841a12daeb6754d133739')
-if len(API_HASH) == 0:
+if API_HASH == 0:
     print('Error - API_HASH is missing, exiting now')
     exit()
 BOT_TOKEN = environ.get('6140001085:AAGmOgkCQilSIsKFowkxcMV_j1QhUY1zyHM')
-if len(BOT_TOKEN) == 0:
+if BOT_TOKEN == 0:
     print('Error - BOT_TOKEN is missing, exiting now')
     exit()
-PORT = int(environ.get('PORT', '80'))
+PORT = intenviron.get('PORT', '80')
 
 # Bot pics
 PICS = (environ.get('PICS', 'https://telegra.ph/file/58fef5cb458d5b29b0186.jpg https://telegra.ph/file/f0aa4f433132769f8970c.jpg https://telegra.ph/file/f515fbc2084592eca60a5.jpg https://telegra.ph/file/20dbdcffaa89bd3d09a74.jpg https://telegra.ph/file/6045ba953af4def846238.jpg')).split()
 
 # Bot Admins
 ADMINS = environ.get('1598575940')
-if len(ADMINS) == 0:
+if ADMINS == 0:
     print('Error - ADMINS is missing, exiting now')
     exit()
 else:
-    ADMINS = [int(admins) for admins in ADMINS.split()]
+    ADMINS = [admins for admins in ADMINS.split()]
 
 # Channels
-INDEX_CHANNELS = [int(index_channels) if index_channels.startswith("-") else index_channels for index_channels in environ.get('INDEX_CHANNELS', '').split()]
-if len(INDEX_CHANNELS) == 0:
+INDEX_CHANNELS = [index_channels if index_channels.startswith("-") else index_channels for index_channels in environ.get('INDEX_CHANNELS', '').split()]
+if INDEX_CHANNELS == 0:
     print('Info - INDEX_CHANNELS is empty')
 AUTH_CHANNEL = [int(auth_channels) for auth_channels in environ.get('AUTH_CHANNEL', '').split()]
-if len(AUTH_CHANNEL) == 0:
+if AUTH_CHANNEL == 0:
     print('Info - AUTH_CHANNEL is empty')
 LOG_CHANNEL = environ.get('LOG_CHANNEL', '')
-if len(LOG_CHANNEL) == 0:
+if LOG_CHANNEL == 0:
     print('Error - LOG_CHANNEL is missing, exiting now')
     exit()
 else:
-    LOG_CHANNEL = int(LOG_CHANNEL)
+    LOG_CHANNEL = LOG_CHANNEL
 IS_FSUB = is_enabled('IS_FSUB', True)
 
 # support group
 SUPPORT_GROUP = environ.get('SUPPORT_GROUP', '')
-if len(SUPPORT_GROUP) == 0:
+if SUPPORT_GROUP == 0:
     print('Error - SUPPORT_GROUP is missing, exiting now')
     exit()
 else:
@@ -69,15 +69,15 @@ else:
 
 # for chatGPT
 OPENAI_API = environ.get('OPENAI_API', '')
-if len(OPENAI_API) == 0:
+if OPENAI_API == 0:
     print('Info - OPENAI_API is empty')
 
 # MongoDB information
 DATABASE_URL = environ.get("mongodb+srv://vasanthakumar200612:Vasanthkumar@200612@autofilterbot.zidghl6.mongodb.net/?retryWrites=true&w=majority&appName=AutoFilterBot")
-if len(DATABASE_URL) == 0:
+if DATABASE_URL == 0:
     print('Error - DATABASE_URL is missing, exiting now')
     exit()
-DATABASE_NAME = environ.get('DATABASE_NAME', "Cluster0")
+DATABASE_NAME = environ.get("AutoFilterBot")
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Files')
 
 # Links
