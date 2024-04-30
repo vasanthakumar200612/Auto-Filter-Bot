@@ -1,1 +1,7 @@
-
+services:
+  - name: api
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "python3 main.py"
+    env: 
+      - key: "PYTHONUNBUFFERED"
+        value: "true"
